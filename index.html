@@ -12,11 +12,21 @@
 <body>
     <header>
         <nav>
-            <div class="logo">Magrão Pinturas</div>
+            <div class="logo">
+                <img width="300px" src="assets/images/magrao_logo.svg" alt="Magrão Pinturas">
+            </div>
+            
+            <!-- BOTÃO HAMBURGUER ADICIONADO -->
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
             <div class="nav-links">
                 <a href="#Sobre">Sobre</a>
-                <a href="#contato">Contato</a>
                 <a href="#Serviços">Serviços</a>
+                <a href="#contato">Contato</a>
             </div>
         </nav>
     </header>
@@ -31,47 +41,56 @@
             <h2>Conheça nosso trabalho</h2>
             <div class="reels-container">
                 <div class="reel-placeholder">
-                <!-- coloquei isso por enquanto, dps achar a melhor opção -->
-                <video controls autoplay muted width="100%" >
-                    <source src="assets/videos/video_1.mp4" type="video/mp4">
-                    seu navegador não suporta a tag video
-                </video>
+                    <video controls autoplay muted width="100%">
+                        <source src="assets/videos/video_1.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag video
+                    </video>
                 </div>
                 <div class="reel-placeholder">
-                    <i class="reel-icon fab fa-instagram"></i>
-                    <p class="reel-text">Cole seus Reels do Instagram aqui para mostrar seu trabalho em ação</p>
+                    <video controls muted width="100%">
+                        <source src="assets/videos/video_2.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag video
+                    </video>
                 </div>
                 <div class="reel-placeholder">
-                    <i class="reel-icon fab fa-instagram"></i>
-                    <p class="reel-text">Cole seus Reels do Instagram aqui para mostrar seu trabalho em ação</p>
+                    <video controls muted width="100%">
+                        <source src="assets/videos/video_3.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag video
+                    </video>
                 </div>
             </div>
         </section>
+        
         <section class="bio-section">
             <div class="avatar-container">
-                <img src="assets/images/magrao.png" alt="Foto de perfil" class="avatar">
+                <img src="assets/images/magrao.png" alt="Dean Pinto Andrade" class="avatar">
             </div>
             <div id="Sobre" class="bio-content">
-                <h2>Dean Pinto Andrade</h2>
-                <p>Porto Velho, 24 Anos, mudando desde 2022 a vida das pessoas através das cores. Jovem, disposto a descomplicar sua vida quando o assunto é pintura!</p>
+                <h2>Dean De Andrade Belo (Pintor Imobiliário)</h2>
+                <p>Porto Velho, 24 Anos, mudando desde 2022 a vida das pessoas através das cores. Jovem, disposto a descomplicar sua vida quando o assunto é pintura! Acompanhe meus trabalhos diáriamente nas redes sociais, me chama pra um orçamento!</p>
             </div>
         </section>
     </main>
     
     <footer>
         <div id="contato" class="footer-content">
-            <h2>Vamos Conversar?</h2>
-            <p>Entre em contato conosco e descubra como podemos transformar sua ideia em realidade.</p>
+            <h2>Fale comigo, veja preços e acompanhe: </h2>
+            <p>Entre em contato e descubra como podemos transformar sua ideia em realidade.</p>
             <div class="cta-buttons">
-                <a href="https://wa.me/556992948505?text=Olá,%20gostaria%20de%20conhecer%20uma%20nova%20cor." class="cta-button" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+                <a href="https://wa.me/556992948505?text=Olá,%20poderia%20me%20ajudar%20com%20cor?" class="cta-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Mensagem
+                </a>
+                <a href="https://wa.me/c/556992948505" class="cta-button" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Catálogo
                 </a>
                 <a href="https://www.instagram.com/magraopinturas7/" class="cta-button" target="_blank">
                     <i class="fab fa-instagram"></i> Instagram
                 </a>
             </div>
-            <p class="copyright">&copy; 2025 <a href="https://github.com/Rug-gieri">Rethink Software.</a> Todos os direitos reservados.</p>
+            <p class="copyright">&copy; 2025 <a href="rethink.html">Rethink Software.</a> Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
