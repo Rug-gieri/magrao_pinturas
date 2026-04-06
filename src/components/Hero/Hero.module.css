@@ -1,0 +1,252 @@
+.hero {
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 7rem 2rem 5rem;
+}
+
+/* ── Background ─────────────────────────────────────────────── */
+.bgWrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.bgImage {
+  object-fit: cover;
+  object-position: center 30%;
+  transform: scale(1.04);
+  transition: transform 8s ease;
+  width: 100%;
+  height: 100%;
+}
+
+.hero:hover .bgImage {
+  transform: scale(1.08);
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.94) 0%,
+    rgba(255, 255, 255, 0.82) 55%,
+    rgba(87, 169, 208, 0.12) 100%
+  );
+}
+
+/* ── Floating accents ──────────────────────────────────────── */
+.accent1 {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(87, 169, 208, 0.18) 0%, transparent 70%);
+  animation: pulse 6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.accent2 {
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(87, 169, 208, 0.1) 0%, transparent 70%);
+  animation: pulse 8s ease-in-out infinite reverse;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.18); opacity: 1; }
+}
+
+/* ── Content ────────────────────────────────────────────────── */
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.tag {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+  animation-delay: 0s !important;
+}
+
+/* ── Fade-in-up util applied via JS ─────────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease forwards;
+}
+
+.heading {
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+  color: var(--text-muted);
+  max-width: 540px;
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: var(--brand-orange);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 1rem 2.2rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-orange);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  white-space: nowrap;
+}
+
+.btnPrimary:hover {
+  background: var(--brand-orange-dark);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--text-dark);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 1rem 2.2rem;
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition), background var(--transition), transform var(--transition);
+  white-space: nowrap;
+  font-family: inherit;
+}
+
+.btnSecondary:hover {
+  border-color: var(--brand-orange);
+  color: var(--brand-orange);
+  background: rgba(87, 169, 208, 0.06);
+  transform: translateY(-3px);
+}
+
+/* ── Stats ──────────────────────────────────────────────────── */
+.stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.statItem strong {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--brand-orange);
+}
+
+.statItem span {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* ── Scroll indicator ───────────────────────────────────────── */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(87, 169, 208, 0.12);
+  border: 2px solid rgba(87, 169, 208, 0.3);
+  color: var(--brand-orange);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  animation: bounce 2.2s ease infinite;
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+}
+
+.scrollIndicator:hover {
+  background: rgba(87, 169, 208, 0.22);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stats {
+    gap: 1.5rem;
+  }
+}

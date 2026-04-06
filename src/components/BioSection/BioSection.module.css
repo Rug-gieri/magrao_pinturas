@@ -1,0 +1,251 @@
+.section {
+  padding: 7rem 2rem;
+  background: #fff;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+}
+
+/* ── Photo ──────────────────────────────────────────────────── */
+.photoWrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.photoRing {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 3px dashed rgba(87, 169, 208, 0.4);
+  animation: spin 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.photoContainer {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid #fff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 0 0 8px rgba(87, 169, 208, 0.1);
+}
+
+.photo {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.photoContainer:hover .photo {
+  transform: scale(1.06);
+}
+
+/* ── Badge ─────────────────────────────────────────────────── */
+.badge {
+  position: absolute;
+  bottom: 16px;
+  right: -8px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--brand-orange);
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-orange);
+  white-space: nowrap;
+}
+
+/* ── Content ────────────────────────────────────────────────── */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.heading span {
+  color: var(--brand-orange);
+}
+
+.body {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  max-width: 540px;
+}
+
+/* ── Chips ──────────────────────────────────────────────────── */
+.chips {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #f5f5f5;
+  color: var(--text-dark);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid #e8e8e8;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.chip i {
+  color: var(--brand-orange);
+}
+
+.chip:hover {
+  background: rgba(87, 169, 208, 0.08);
+  border-color: rgba(87, 169, 208, 0.3);
+}
+
+.chipGuia {
+  background: rgba(15, 105, 255, 0.07);
+  border-color: rgba(15, 105, 255, 0.25);
+  color: #1a5fcf;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.chipGuia i {
+  color: #1a5fcf;
+}
+
+.chipGuia:hover {
+  background: rgba(15, 105, 255, 0.14);
+  border-color: rgba(15, 105, 255, 0.45);
+}
+
+/* ── Actions ────────────────────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.btnWhatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: #25d366;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.btnWhatsapp:hover {
+  background: #1ebe5a;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(37, 211, 102, 0.5);
+}
+
+.btnInsta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 18px rgba(253, 29, 29, 0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+}
+
+.btnInsta:hover {
+  opacity: 0.88;
+  transform: translateY(-3px);
+}
+
+.btnGuia {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: transparent;
+  color: #1a5fcf;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-pill);
+  border: 2px solid rgba(15, 105, 255, 0.35);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.btnGuia:hover {
+  background: rgba(15, 105, 255, 0.08);
+  border-color: #1a5fcf;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(15, 105, 255, 0.2);
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .inner {
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .photoContainer {
+    width: 280px;
+    height: 280px;
+  }
+
+  .body {
+    max-width: 100%;
+  }
+
+  .chips,
+  .actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .photoContainer {
+    width: 220px;
+    height: 220px;
+  }
+
+  .btnWhatsapp,
+  .btnInsta {
+    width: 100%;
+    justify-content: center;
+  }
+}
